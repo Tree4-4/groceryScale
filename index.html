@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,10 +38,17 @@
                     max="10"
                     step="0.01"
                     />
-                    <div class="nb-3">
+                    <div class="ny-3">
                         <button class="btn btn-light" type="submit" id="submitBtn">Submit</button>
                     </div>
                 </form>
+                <div class="display-div" id="displayDiv">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">item: <span id="itemDisplay"></span></li>
+                        <li class="list-group-item">Weight: <span id="weightDisplay"></span></li>
+                        <li class="list-group-item">Price: <span id="priceDisplay"></span></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
