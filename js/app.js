@@ -70,13 +70,35 @@ const data = [
     }
 ]
 
+let pricePerPound = 0
+
 //2. Display data on browser .map()
 
 // .map() => return a copied array after performing a task on an original array
 
-let arr1 = ['JOSH', 'MARY', 'EZEKIEL']
+// let arr1 = ['JOSH', 'MARY', 'EZEKIEL']
 
-let arr2 = arr1.map(name => name.toLowerCase())
-console.log(arr2);
+// let arr2 = arr1.map(name => name.toLowerCase())
+// console.log(arr2);
 
-// const cells = data.map()
+const cells = data.map(item => {
+    const cell = document.createElement('div')
+    cell.classList.add('item')
+    cell.setAttribute('data-item', `${item.item}`)
+    cell.innerText = `${item.itemDisplay} - ${item.pricePerPound} per lb.`
+    return cell
+})
+
+cells.forEach(cell => {
+    document.getElementById('itemSection').appendChild(cell)
+})
+
+cells.addEventListener('click', ()=> {
+    // console.log('clicked')
+    for (let obj of data) {
+        if (obj.item == cells.getAttribute('data-item')) {
+            price = obj.pricePerPound
+            console.log(pricePerPound)
+        }
+    }
+})
